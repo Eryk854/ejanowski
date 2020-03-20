@@ -1,6 +1,8 @@
+console.log("aaa")
 window.addEventListener("load", gra)
 var portrety = []
 var elportrety = document.getElementsByClassName("karta");
+console.log("Tu"+ elportrety)
 var flaga = true; //Czy pierwsza karta
 var index_pierwsza_karta = 0;
 var pary=6;
@@ -8,6 +10,7 @@ var klucz=true;
 
 function wylosuj(){
     pola=12;
+    console.log(pola)
     var wszyscy = ["arya", "cersei", "drogo", "jaime", "jon", "tywin"];
 
     var portrety = [];
@@ -30,12 +33,17 @@ function wylosuj(){
 
 function gra(){
     portrety = wylosuj().slice()
-    for(let i= 0;i<elportrety.length;i++)
-            elportrety[i].addEventListener('click',function(){OdslonKarte(i/*,ileKart*/);},false);
+    console.log(elportrety)
+    for(let i= 0; i<elportrety.length;i++)
+            elportrety[i].addEventListener('click',OdslonKarte.bind(this,i), false);
+
+    i=0
+    console.log(portrety)
 }
 
 function OdslonKarte(nr)
 {
+console.log(nr)
     if(klucz)
     {
         var karta = document.getElementById("karta"+nr);
