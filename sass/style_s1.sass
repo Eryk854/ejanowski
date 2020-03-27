@@ -1,0 +1,157 @@
+$font_color: black
+$bg_url: url("../images/white-waves.png")
+
+=zero_margin
+	margin: 0
+	padding: 0
+
+
+=center_element
+	margin-right: auto
+	margin-left: auto
+
+
+=galeria
+	+center_element
+	text-align: center
+	align-content: center
+	margin-bottom: 25px
+
+
+=figure-shared
+	display: block
+	float: left
+	height: 300px
+	margin-bottom: 20px
+	margin-top: 10px
+	&:hover img
+		cursor: pointer
+		-webkit-filter: sepia(0)
+		filter: sepia(0)
+	img
+		-webkit-filter: sepia(100%)
+		filter: sepia(100%)
+		-webkit-transition: .3s ease-in-out
+		transition: .3s ease-in-out
+
+=figcaption-shared
+	height: 30px
+	font-size: 18px
+
+
+
+body
+	+zero_margin
+	color: $font_color
+	background-image: $bg_url
+
+.nav
+	+zero_margin
+	border: 1px solid #ccc
+	border-width: 1px 0
+	list-style: none
+	text-align: center
+	background-color: #333
+	li
+		display: inline
+		a
+			&:hover
+				background-color: #111
+	a
+		display: inline-block
+		color: white
+		text-align: center
+		padding: 14px 16px
+		text-decoration: none
+	
+#pojem
+	+center_element
+	text-align: center
+	margin-top: -1px
+	padding: 0px
+	width: 75%
+
+#main
+	width: 70%
+	float: left
+
+#right
+	max-width: 25%
+	float: left
+	margin-left: 45px
+
+
+#linki
+	list-style: none
+	margin: 0
+	padding: 0px
+	li
+		margin-top: 10px
+		margin-bottom: 10px
+		font-size: 18px
+		a
+			text-decoration: none
+			color: black
+			&:hover
+				color: blue
+
+#aktualnosci
+	text-align: left
+	margin-top: 50px
+
+#reklama
+	margin-top: 30px
+	max-height: 10vw
+	height: 7vw
+	border: 1px solid black
+	overflow: auto
+	
+@media (min-width: 1224px)
+	#galeria
+		+galeria
+		figcaption
+			+figcaption-shared
+			padding: 22px
+			
+		figure
+			+zero_margin
+			+figure-shared
+			width: 27%
+			padding: 22px
+	
+@media (min-width: 880px) and (max-width: 1224px)
+	#galeria
+		+galeria
+		+center_element
+		figcaption
+			+figcaption-shared
+			padding: 22px
+			
+		figure
+			+zero_margin
+			+figure-shared
+			width: 40%
+			padding: 22px
+
+@media (max-width: 880px)
+	#galeria
+		+galeria	
+		+center_element
+		figcaption
+			+figcaption-shared
+		figure
+			+zero_margin
+			+figure-shared
+			width: 100%	
+
+.footer
+	left: 0
+	bottom: 0
+	width: 100%
+	background-color: #07464F
+	color: white
+	text-align: center
+	margin-top: 45px
+	p
+		+zero_margin
+		padding: 8px
