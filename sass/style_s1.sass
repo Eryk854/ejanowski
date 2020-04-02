@@ -38,6 +38,15 @@ $bg_url: url("../images/white-waves.png")
 	height: 30px
 	font-size: 18px
 
+=right_under_main
+	#main
+		width: 100%		
+	#right
+		width: 100%
+		text-align: center
+		h3
+			font-size: 30px
+			margin-bottom: 0
 
 
 body
@@ -48,15 +57,16 @@ body
 .image_container
 	position: relative
 	
-.text-block 
-	position: absolute
-	top: 50%
-	left: 50%
-	transform: translate(-50%, -50%)
-	color: white
-	font-size: 22px
-	padding-left: 20px
-	padding-right: 20px
+=text_in_block
+	.text-block 
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		color: white
+		font-size: 22px
+		padding-left: 20px
+		padding-right: 20px
 	
 .responsive_foto
 	margin-top: 10px
@@ -92,14 +102,6 @@ body
 	padding: 0px
 	width: 75%
 
-#main
-	width: 70%
-	float: left
-
-#right
-	max-width: 25%
-	float: left
-	margin-left: 45px
 
 
 #linki
@@ -116,9 +118,6 @@ body
 			&:hover
 				color: blue
 
-#aktualnosci
-	text-align: left
-	margin-top: 50px
 
 #reklama
 	margin-top: 30px
@@ -128,6 +127,7 @@ body
 	overflow: auto
 	
 @media (min-width: 1224px)
+	+text_in_block
 	#galeria
 		+galeria
 		figcaption
@@ -139,8 +139,18 @@ body
 			+figure-shared
 			width: 27%
 			padding: 22px
+	#main
+		width: 70%
+		float: left
+
+	#right
+		max-width: 25%
+		float: left
+		margin-left: 45px
 	
-@media (min-width: 880px) and (max-width: 1224px)
+@media (min-width: 870px) and (max-width: 1224px)
+	+right_under_main
+	+text_in_block
 	#galeria
 		+galeria
 		+center_element
@@ -154,7 +164,12 @@ body
 			width: 40%
 			padding: 22px
 
-@media (max-width: 880px)
+
+@media (max-width: 870px)
+	+right_under_main
+	+text_in_block
+	.text-block
+		font-size: 14px
 	#galeria
 		+galeria	
 		+center_element
@@ -164,6 +179,7 @@ body
 			+zero_margin
 			+figure-shared
 			width: 100%	
+			
 
 .footer
 	left: 0
